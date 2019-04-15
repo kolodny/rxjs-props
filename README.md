@@ -3,7 +3,6 @@ rxjs-props
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 [![Downloads][downloads-image]][downloads-url]
 
 ### Usage
@@ -24,8 +23,6 @@ props({
 [npm-url]: https://npmjs.org/package/rxjs-props
 [travis-image]: https://img.shields.io/travis/kolodny/rxjs-props.svg?style=flat-square
 [travis-url]: https://travis-ci.org/kolodny/rxjs-props
-[coveralls-image]: https://img.shields.io/coveralls/kolodny/rxjs-props.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/kolodny/rxjs-props
 [downloads-image]: http://img.shields.io/npm/dm/rxjs-props.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/rxjs-props
 [min-size-image]: https://badgen.net/bundlephobia/min/rxjs-props?label=minified

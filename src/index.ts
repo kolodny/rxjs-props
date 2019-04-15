@@ -5,7 +5,10 @@ type ObservableObject<T> = {
   [K in keyof T]: Observable<T[K]> | T[K]
 }
 
-export function props<T>(obj: ObservableObject<T>): Observable<T> {
+export function props<T>(
+  obj: ObservableObject<T>,
+  strategy: (sources: Observable<any>[]) => Observable<any> = combineLatest,
+): Observable<T> {
   const keys = Object.keys(obj);
   if (keys.length === 0) {
     return of({}) as any;
@@ -16,7 +19,7 @@ export function props<T>(obj: ObservableObject<T>): Observable<T> {
       values[index] = of(value); // Don't judge me!
     }
   });
-  return combineLatest(values).pipe(map(results => {
+  return strategy(values).pipe(map(results => {
     const resolved = {};
     for (let keyIndex = 0; keyIndex < keys.length; keyIndex++) {
       (resolved as any)[keys[keyIndex]] = results[keyIndex];
